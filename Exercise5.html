@@ -14,6 +14,13 @@
       display: grid;
       /* TODO: Define grid-template-columns and grid-template-rows */
       /* TODO: Add grid-template-areas if using areas */
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: 
+        "header header header header header"
+        "aside main main main right-panel"
+        "aside main main main right-panel"
+        "footer footer footer footer footer";
       gap: 10px;
       padding: 10px;
       height: 100vh;
@@ -22,18 +29,22 @@
 
     header {
       /* TODO: Place header at the top (span all 3 columns) */
+        grid-area: header;
         background: #3498db; /* placeholder */
         color: white;
     }
 
     aside {
       /* TODO: Place sidebar in the first column */
+      grid-area: aside;
      background: #2ecc71; /* placeholder */
      color: white;
     }
 
     main {
       /* TODO: Place main content in the center column */
+      grid-area: main;
+      grid-template-columns: repeat(3 , auto);
         background: #ecf0f1; /* placeholder */
         color: white;
         display: grid;
@@ -52,12 +63,14 @@
 
     .right-panel {
       /* TODO: Place this in the last column */
+      grid-area: right-panel;
       background: #e67e22; /* placeholder */
       color: white;
     }
 
     footer {
       /* TODO: Place footer at the bottom (span all 3 columns) */
+      grid-area: footer;
       background: #9b59b6; /* placeholder */
       color: white;
     }
